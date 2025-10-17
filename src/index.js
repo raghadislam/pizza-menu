@@ -93,13 +93,14 @@ function Menu() {
 }
 
 function Pizza({ pizzaObject }) {
+  console.log(pizzaObject);
   return (
-    <dev className="pizza">
+    <dev className={`pizza ${pizzaObject.soldOut ? "sold-out" : ""}`}>
       <img src={pizzaObject.photoName} alt={pizzaObject.name} />
       <div>
         <h3>{pizzaObject.name}</h3>
         <p>{pizzaObject.ingredients}</p>
-        <span>{pizzaObject.price}</span>
+        <span>{pizzaObject.soldOut ? "SOLD OUT" : pizzaObject.price}</span>
       </div>
     </dev>
   );
